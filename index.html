@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Flex Academy — Hero prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=63" />
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="#"><img src="assets/flexacademylogo.png" alt="Flex Academy" /></a>
+  <nav class="nav-links">
+    <a href="#">Programme</a><a href="#results">Results</a><a href="#">Founders</a><a href="#faq">Faqs</a>
+  </nav>
+  <a class="btn btn-sm magnetic" href="#register" data-flow-open="webinar"><span>Join Free Webinar</span><i class="arrow"></i></a>
+</header>
+
+<main>
+  <!-- CAMERA: one neighbourhood behind the hero, What you'll learn and the Scale section -->
+  <div class="cam" id="cam" aria-hidden="true">
+    <div class="cam-view" id="camView">
+      <!-- Neighbourhood stage: grey base + colour layer revealed by masks -->
+      <div class="stage" id="stage">
+        <div class="stage-inner" id="stageInner">
+          <img class="layer grey" src="assets/neighbourhood.jpg" alt="" draggable="false" />
+          <img class="layer color" id="colorLayer" src="assets/neighbourhood.jpg" alt="" draggable="false" />
+          <div class="pins" id="pins"></div>
+        </div>
+      </div>
+      <div class="cam-fade" id="camFade"></div>
+    </div>
+  </div>
+
+  <!-- HERO: pinned scroll track -->
+  <section class="hero-track" id="hero">
+    <div class="hero-sticky">
+      <div class="veil" id="veil"></div>
+      <div class="lens-ring" id="lensRing"></div>
+      <div class="outro" id="outro"></div>
+      <div class="grain"></div>
+
+      <div class="hero-copy" id="heroCopy">
+        <h1 class="headline" id="headline">Enter the short term Rental business with our Playbook</h1>
+        <p class="sub" id="sub">A guided start in short-term rentals. Join a free webinar with the founders who started small and grew a multi-city rental business.</p>
+        <div class="cta-row" id="ctaRow">
+          <a class="btn btn-lg btn-free magnetic" href="#register" data-flow-open="webinar" aria-label="Register for the free webinar"><span>Register for webinar</span><i class="arrow"></i><em class="free-tag" aria-hidden="true">Free</em></a>
+        </div>
+      </div>
+
+      <div class="proof" id="proof">
+        <div class="proof-label">Founders of Flex Academy</div>
+        <div class="proof-cards">
+          <article class="card">
+            <img class="avatars" src="assets/founders.png" alt="Raouf Yousfi and Michael Buggy" />
+            <strong><span class="count" data-to="10">0</span>+ years</strong>
+            <span>Experience of STR business</span>
+          </article>
+          <article class="card">
+            <i class="badge badge-dark"><svg viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg></i>
+            <strong><span class="count" data-to="100">0</span>+ units</strong>
+            <span>Managed Actively</span>
+          </article>
+          <article class="card">
+            <i class="badge badge-green"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></i>
+            <strong><span class="count" data-to="4">0</span> cities</strong>
+            <span>Expanded across</span>
+          </article>
+        </div>
+      </div>
+
+      <div class="scroll-hint" id="scrollHint"><span></span>Scroll</div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL LEARN: fixed left, scrolling right -->
+  <section class="learn" id="learn">
+    <div class="learn-bg" id="learnBg"></div>
+
+    <!-- LEFT: fixed -->
+    <div class="learn-col learn-left">
+      <div class="learn-inner">
+        <div class="learn-intro">
+          <p class="kicker">What you’ll learn</p>
+          <h2 class="learn-title">First Step into short term Rentals</h2>
+          <p class="learn-sub">A free, live webinar where the founders walk you through how a short-term rental business starts, from the first idea to the first guest.</p>
+          <a class="btn btn-lg btn-free magnetic learn-cta" href="#register" data-flow-open="webinar" aria-label="Register for the free webinar"><span>Register for webinar</span><i class="arrow"></i><em class="free-tag" aria-hidden="true">Free</em></a>
+          <a class="btn btn-lg btn-free magnetic learn-cta-b" href="#register" data-flow-open="webinar" aria-label="Register for the free webinar"><span>Register for webinar</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg><em class="free-tag" aria-hidden="true">Free</em></a>
+        </div>
+
+        <div class="founders">
+          <p class="hosted">Hosted by</p>
+          <div class="founders-head">
+            <img src="assets/founders-lg.png" alt="Raouf Yousfi and Michael Buggy" />
+            <p><b>Raouf &amp; Michael</b><span>Founders of The Flex and Base360</span></p>
+          </div>
+          <ol class="perks" id="perks">
+            <li data-step="0">
+              <i class="perk-ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="13" height="14" rx="3"/><path d="M16 10l5-3v10l-5-3"/></svg></i>
+              <div><b>Live sessions</b><span>Weekly group calls and a monthly 1:1 with a founder</span></div>
+            </li>
+            <li data-step="1">
+              <i class="perk-ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></i>
+              <div><b>Templates &amp; Base360</b><span>The SOPs, checklists and software that run The Flex</span></div>
+            </li>
+            <li data-step="2">
+              <i class="perk-ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9.5" r="2.5"/><path d="M3 19c.8-3.2 3.2-5 6-5s5.2 1.8 6 5M15 14.6c2.6-.4 4.9 1 5.6 4.4"/></svg></i>
+              <div><b>Operator community</b><span>A room of people working through the same stage</span></div>
+            </li>
+          </ol>
+          <p class="founders-note">The webinar covers the first step. Launch takes you from choosing a market to hosting your first guests.</p>
+          <a class="learn-link" href="#pricing" data-scroll-to=".plan-launch"><span>About Launch Programme</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: fixed stage, one image, content progresses -->
+    <div class="learn-col learn-right">
+      <div class="learn-inner" id="stageR">
+        <div class="scene" data-focus="38.5,51.5" data-zoom="4.4" data-shift="0.16,0.12"></div>
+
+        <div class="step-cards">
+          <div class="step-card" data-i="0">
+            <p class="step-label">START</p>
+            <h3>Your first unit</h3>
+            <p>Learn how the business works, choose your market and secure your first unit with confidence.</p>
+          </div>
+          <div class="step-card" data-i="1">
+            <p class="step-label">BUILD</p>
+            <h3>Guest-ready operations</h3>
+            <p>Set up, list and price your units, with routines that keep every stay running smoothly.</p>
+          </div>
+          <div class="step-card" data-i="2">
+            <p class="step-label">SCALE</p>
+            <h3>A growing company</h3>
+            <p>Add units, systems and a team, and grow your business into new cities</p>
+          </div>
+          <div class="rail" id="rail"><i><b></b></i><i><b></b></i><i><b></b></i></div>
+        </div>
+
+        <div class="float f-booking" data-el="booking">
+          <i class="badge badge-green"><svg viewBox="0 0 24 24"><path class="tick" d="M5 12.5l4.2 4.2L19 7"/></svg></i>
+          <strong>New Booking confirmed</strong>
+          <span>2 guests <i class="dot"></i> 3 nights</span>
+        </div>
+        <div class="float f-filled" data-el="filled">
+          <i class="badge badge-navy"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2.5"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></i>
+          <strong>Bookings Filled</strong>
+          <span>Occupancy and nightly rate matters</span>
+          <div class="nights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+
+        <div class="listing l-main" data-el="main">
+          <div class="thumb" data-focus="38.5,50.5" data-zoom="5.6"></div>
+          <div class="listing-body">
+            <div class="sk sk-1"><span>Villa · 3 bedrooms</span></div>
+            <div class="sk sk-2"><span>£[X] / night</span></div>
+          </div>
+        </div>
+        <div class="float f-ready" data-el="ready">
+          <i class="badge badge-navy"><svg viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg></i>
+          <strong>Property Ready to list</strong>
+          <span>Occupancy and nightly rate matters</span>
+        </div>
+
+        <div class="listing small l-b" data-el="lb">
+          <div class="thumb" data-focus="56.2,24.5" data-zoom="5.6"></div>
+          <div class="listing-body"><div class="sk sk-1"></div><div class="sk sk-2"></div></div>
+        </div>
+        <div class="listing small l-c" data-el="lc">
+          <div class="thumb" data-focus="76.6,28" data-zoom="5.6"></div>
+          <div class="listing-body"><div class="sk sk-1"></div><div class="sk sk-2"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="learn-spacer"></div>
+  </section>
+
+  <!-- SCALE PATH: operators who already run units -->
+  <section class="ops" id="ops">
+    <div class="ops-pin">
+      <div class="ops-right" id="opsRight">
+        <div class="ops-stage" id="opsStage">
+          <img class="layer grey" src="assets/neighbourhood.jpg" alt="" draggable="false" />
+          <img class="layer color" id="opsColor" src="assets/neighbourhood.jpg" alt="" draggable="false" />
+          <div class="ops-callouts" id="opsCallouts"></div>
+        </div>
+        <div class="ops-fade"></div>
+        <div class="ops-progress" id="opsProgress"></div>
+      </div>
+
+      <div class="ops-left">
+        <div class="ops-inner">
+          <p class="kicker">Already have property units</p>
+          <h2 class="learn-title ops-title">Challenges to scale Short Term Rental Company</h2>
+          <p class="learn-sub">A Free Strategy call helps you reflect towards your challenges and set the foundation.</p>
+          <div class="ops-ctas">
+            <a class="btn btn-lg btn-scale btn-free magnetic learn-cta-b ops-cta" href="#book" data-flow-open="call" aria-label="Book a free strategy call"><span>Book a strategy call</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg><em class="free-tag" aria-hidden="true">Free</em></a>
+            <a class="ops-checklist" href="#book" data-flow-open="call" data-flow-step="checklist"><span>Get Free STR scaling checklist</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+          </div>
+
+          <div class="ops-host">
+            <p class="hosted">Your call is with</p>
+            <div class="founders-head">
+              <img src="assets/founders-lg.png" alt="Raouf Yousfi and Michael Buggy" />
+              <p><b>Raouf &amp; Michael</b><span>Founders of The Flex and Base360</span></p>
+            </div>
+            <p class="founders-note">The call looks at where your units are today. Scale is twelve weeks of building the team and systems around them.</p>
+            <a class="learn-link" href="#pricing" data-scroll-to=".plan-scale"><span>About Scale Programme</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING: both paths side by side -->
+  <section class="price" id="pricing">
+    <div class="price-inner">
+      <div class="price-intro">
+        <p class="kicker">WE ARE HERE</p>
+        <h2 class="learn-title">At every stage of Rental Business</h2>
+        <p class="learn-sub">Start fresh or grow what you run, guided by the founders and their systems.</p>
+      </div>
+
+      <div class="plans">
+        <article class="plan plan-launch">
+          <div class="plan-art" data-focus="38.5,50" data-zoom="5" data-shift="0.18,0.04"></div>
+          <div class="plan-head">
+            <h3>Launch Programme</h3>
+            <p class="plan-price">$X</p>
+            <a class="btn btn-md magnetic" href="#register" data-flow-open="webinar"><span>Select Plan</span><i class="arrow"></i></a>
+          </div>
+          <ul class="plan-list">
+            <li>A self-paced course</li>
+            <li>Live group sessions</li>
+            <li>Templates to open your first units.</li>
+          </ul>
+        </article>
+
+        <article class="plan plan-scale">
+          <div class="plan-art" data-focus="60,66" data-zoom="2.1" data-shift="0.18,0.05"></div>
+          <div class="plan-head">
+            <h3>Scale Programme</h3>
+            <p class="plan-price">$Y</p>
+            <a class="btn btn-md magnetic" href="#book" data-flow-open="call"><span>Select Plan</span><i class="arrow"></i></a>
+          </div>
+          <ul class="plan-list">
+            <li>12-week programme with weekly group sessions</li>
+            <li>A monthly 1:1 with a founder</li>
+            <li>The operator community</li>
+            <li>SOPs and Base360 access</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDERS -->
+  <section class="fdr" id="founders">
+    <div class="fdr-inner">
+      <div class="fdr-left">
+        <p class="kicker">CORE OF FLEX ACADEMY</p>
+        <h2 class="learn-title fdr-title">The people behind the playbook</h2>
+        <div class="fdr-quote">
+          <p class="fdr-from">From Raouf &amp; Michael</p>
+          <blockquote>Every system in Base360 and every lesson in Flex Academy started as a problem we solved at The Flex.</blockquote>
+        </div>
+        <div class="fdr-stats">
+          <article class="card">
+            <i class="badge badge-green"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></i>
+            <strong><span class="fcount" data-to="4">0</span> cities</strong>
+            <span>Expanded across</span>
+          </article>
+          <article class="card">
+            <i class="badge badge-dark"><svg viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg></i>
+            <strong><span class="fcount" data-to="100">0</span>+ units</strong>
+            <span>Managed Actively</span>
+          </article>
+          <article class="card">
+            <i class="badge badge-green"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></i>
+            <strong><span class="fcount" data-to="10">0</span>k+</strong>
+            <span>Operators on Base360</span>
+          </article>
+        </div>
+      </div>
+
+      <div class="fdr-card" id="fdrCard">
+        <!-- photo and cut-outs share one layer so they always line up; only the word moves separately -->
+        <div class="fdr-depth fdr-photo" data-depth="0.6">
+          <img class="fdr-bg" src="assets/founders-bg.jpg" alt="" />
+          <div class="fdr-shade" id="fdrShade"></div>
+        </div>
+        <div class="fdr-depth fdr-word-wrap" data-depth="-0.8"><p class="fdr-word" id="fdrWord">FOUNDERS</p></div>
+        <div class="fdr-depth fdr-people" data-depth="0.6">
+          <figure class="fdr-person p-raouf" data-who="raouf">
+            <img src="assets/raouf-cut.png" alt="Raouf Yousfi" />
+          </figure>
+          <figure class="fdr-person p-michael" data-who="michael">
+            <img src="assets/michael-cut.png" alt="Michael Buggy" />
+          </figure>
+        </div>
+        <div class="fdr-name n-raouf" data-who="raouf"><b>Raouf Yousfi</b><span>Co-founder · The Flex &amp; Base360</span></div>
+        <div class="fdr-name n-michael" data-who="michael"><b>Michael Buggy</b><span>Co-founder · The Flex &amp; Base360</span></div>
+        <div class="fdr-years"><b class="fy-n"><span class="fcount" data-to="30">0</span>+</b><span class="fy-l">Years of Experience</span></div>
+        <div class="fdr-brands"><img src="assets/brand-logos.png" alt="The Flex and Base360" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES: people who joined, and what changed (placeholders until real cases are in) -->
+  <section class="cases" id="results">
+    <div class="cases-inner">
+      <div class="cases-head">
+        <p class="kicker">RESULTS</p>
+        <h2 class="learn-title cases-title">What changed for people who joined</h2>
+        <p class="learn-sub">A few operators from both programmes, where they started and where they are now.</p>
+      </div>
+      <div class="cases-grid">
+        <article class="case case-launch">
+          <div class="case-art" data-focus="38.5,51.5" data-zoom="5.5" aria-hidden="true"></div>
+          <div class="case-top">
+            <span class="case-tag">Launch Programme</span>
+            <span class="case-place">[City], UK</span>
+          </div>
+          <div class="case-who"><i class="case-avatar">AB</i><p><b>[Name]</b><span>Joined [Month Year]</span></p></div>
+          <div class="case-result">
+            <p class="case-units"><span>0</span><i aria-hidden="true">→</i><b>1</b></p>
+            <p class="case-units-label">Units in X months</p>
+          </div>
+          <dl class="case-stats">
+            <div><dt>Occupancy</dt><dd>X%</dd></div>
+            <div><dt>Monthly revenue</dt><dd>$X</dd></div>
+          </dl>
+          <p class="case-line">Chose a market in the first weeks and hosted the first guests a few months later.</p>
+        </article>
+        <article class="case case-launch">
+          <div class="case-art" data-focus="36.8,27.5" data-zoom="5.5" aria-hidden="true"></div>
+          <div class="case-top">
+            <span class="case-tag">Launch Programme</span>
+            <span class="case-place">[City], US</span>
+          </div>
+          <div class="case-who"><i class="case-avatar">CD</i><p><b>[Name]</b><span>Joined [Month Year]</span></p></div>
+          <div class="case-result">
+            <p class="case-units"><span>0</span><i aria-hidden="true">→</i><b>2</b></p>
+            <p class="case-units-label">Units in X months</p>
+          </div>
+          <dl class="case-stats">
+            <div><dt>Occupancy</dt><dd>X%</dd></div>
+            <div><dt>Monthly revenue</dt><dd>$X</dd></div>
+          </dl>
+          <p class="case-line">Furnished and listed both units using the setup templates from the course.</p>
+        </article>
+        <article class="case case-scale">
+          <div class="case-art" data-focus="62.6,53.5" data-zoom="5.5" aria-hidden="true"></div>
+          <div class="case-top">
+            <span class="case-tag">Scale Programme</span>
+            <span class="case-place">[City], Canada</span>
+          </div>
+          <div class="case-who"><i class="case-avatar">EF</i><p><b>[Name]</b><span>Joined [Month Year]</span></p></div>
+          <div class="case-result">
+            <p class="case-units"><span>4</span><i aria-hidden="true">→</i><b>11</b></p>
+            <p class="case-units-label">Units in X months</p>
+          </div>
+          <dl class="case-stats">
+            <div><dt>Occupancy</dt><dd>X%</dd></div>
+            <div><dt>Monthly revenue</dt><dd>$X</dd></div>
+          </dl>
+          <p class="case-line">Moved guest messages and cleaning onto Base360 and hired a first operations lead.</p>
+        </article>
+        <article class="case case-scale">
+          <div class="case-art" data-focus="76.6,29" data-zoom="5.5" aria-hidden="true"></div>
+          <div class="case-top">
+            <span class="case-tag">Scale Programme</span>
+            <span class="case-place">[City], Australia</span>
+          </div>
+          <div class="case-who"><i class="case-avatar">GH</i><p><b>[Name]</b><span>Joined [Month Year]</span></p></div>
+          <div class="case-result">
+            <p class="case-units"><span>6</span><i aria-hidden="true">→</i><b>15</b></p>
+            <p class="case-units-label">Units in X months</p>
+          </div>
+          <dl class="case-stats">
+            <div><dt>Occupancy</dt><dd>X%</dd></div>
+            <div><dt>Monthly revenue</dt><dd>$X</dd></div>
+          </dl>
+          <p class="case-line">Rebuilt pricing around demand and opened in a second city.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ (Figma 15:2763) -->
+  <section class="faq" id="faq">
+    <div class="faq-inner">
+      <div class="faq-head">
+        <h2 class="learn-title faq-title">Frequently Asked Questions (FAQs)</h2>
+        <p class="learn-sub">Answers to what people usually ask before joining the webinar or booking a call. Something else on your mind? Bring it to the call.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item open">
+          <h3><button class="faq-q" type="button" aria-expanded="true" aria-controls="faq-a0" id="faq-q0"><span>What’s the difference between the webinar and the strategy call?</span><i class="faq-ic" aria-hidden="true"></i></button></h3>
+          <div class="faq-a" id="faq-a0" role="region" aria-labelledby="faq-q0"><p>The free webinar is for people starting out, with no units yet or just one. Raouf and Michael walk through how the business works and introduce the Launch Programme. The strategy call is a 20–30 minute conversation for operators already running units, about where the business is today and whether the Scale Programme fits.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1"><span>How much do the programmes cost?</span><i class="faq-ic" aria-hidden="true"></i></button></h3>
+          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1"><p>The webinar and the strategy call are both free. The Launch Programme is $X and the Scale Programme is $Y. What each one includes is set out on the webinar and on the call, before you decide anything.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2"><span>How much time does it take each week?</span><i class="faq-ic" aria-hidden="true"></i></button></h3>
+          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2"><p>Launch is self-paced, with live group sessions alongside it, so you can fit it around a full-time job. Scale runs for twelve weeks, with a weekly group session and a monthly 1:1 with a founder.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3"><span>Does it work outside the UK?</span><i class="faq-ic" aria-hidden="true"></i></button></h3>
+          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3"><p>Yes. The programmes are built for English-speaking markets, including the UK, the US, Canada and Australia. The sessions cover how demand and local rules differ from city to city.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4"><span>Do I need to own property to start?</span><i class="faq-ic" aria-hidden="true"></i></button></h3>
+          <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4"><p>No. The webinar covers the ways people get a first unit without buying one, and what to check before signing anything.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5"><span>Is there a refund or guarantee?</span><i class="faq-ic" aria-hidden="true"></i></button></h3>
+          <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5"><p>[Refund policy to confirm.] The full terms are shared before you join: on the webinar for Launch, and on the strategy call for Scale.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER: the neighbourhood at night ============ -->
+<footer class="ft" id="footer">
+  <div class="ft-bg" aria-hidden="true">
+    <div class="ft-stage" id="ftStage">
+      <img class="ft-night" src="assets/neighbourhood.jpg" alt="" />
+      <img class="ft-color" src="assets/neighbourhood.jpg" alt="" />
+    </div>
+    <div class="ft-tint"></div>
+  </div>
+
+  <div class="ft-inner">
+    <div class="ft-top">
+      <h2 class="ft-tagline">From one home<br />to a rental company.</h2>
+      <div class="ft-pitch">
+        <p class="ft-sub">The playbook, systems and software behind The Flex, taught by the people who built it.</p>
+        <div class="ft-ctas">
+          <a class="btn btn-lg btn-light magnetic" href="#register" data-flow-open="webinar" aria-label="Register for the free webinar"><span>Register for webinar</span><i class="arrow"></i></a>
+          <a class="btn btn-lg btn-text-light magnetic" href="#book" data-flow-open="call" aria-label="Book a free strategy call"><span>Book a strategy call</span><i class="arrow"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ft-mid">
+      <div class="ft-signup">
+        <p class="ft-label ft-label-plain">Not available to talk?</p>
+        <p class="ft-signup-copy">Get the free STR scaling checklist.</p>
+        <form class="ft-form" id="ftForm" novalidate>
+          <input type="email" required placeholder="you@example.com" aria-label="Email for the checklist" />
+          <button type="submit" aria-label="Send me the checklist"><i class="arrow"></i></button>
+        </form>
+        <p class="ft-form-note" id="ftNote">One email with the checklist. No spam.</p>
+      </div>
+
+      <nav class="ft-cols" aria-label="Footer">
+        <div><p class="ft-label">Programme</p><a href="#learn">What you’ll learn</a><a href="#ops">Scale programme</a><a href="#pricing">Pricing</a><a href="#register" data-flow-open="webinar">Free webinar</a></div>
+        <div><p class="ft-label">Company</p><a href="#founders">Founders</a><a href="https://theflex.global" target="_blank" rel="noopener">The Flex ↗</a><a href="https://base360.ai" target="_blank" rel="noopener">Base360 ↗</a><a href="#">Careers</a></div>
+        <div><p class="ft-label">Support</p><a href="#">FAQs</a><a href="#book" data-flow-open="call">Contact the team</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+      </nav>
+    </div>
+
+    <div class="ft-bottom">
+      <p class="ft-copy">© 2026 Flex Academy · Part of The Flex and Base360</p>
+      <div class="ft-social">
+        <span class="ft-label">Follow</span>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5V16M8 7.8v.1M11.5 16v-5.5M11.5 13c0-1.6 1-2.6 2.4-2.6S16 11.3 16 13v3"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.5v5l4-2.5z" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ft-word" aria-hidden="true"><span>Flex</span><span>Academy</span></div>
+</footer>
+
+<!-- ============ CONVERSION FLOWS ============ -->
+<div class="flow" id="flow" aria-hidden="true">
+  <div class="flow-backdrop" data-close></div>
+  <div class="flow-shell" role="dialog" aria-modal="true" aria-label="Sign up">
+    <button class="flow-close" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+
+    <!-- ---------- WEBINAR ---------- -->
+    <div class="flow-view" data-flow="webinar">
+      <aside class="flow-info info-webinar">
+        <div class="info-body">
+          <div class="info-founders">
+            <div class="if-stage">
+              <figure class="if-person if-raouf"><img src="assets/raouf-cut.png" alt="Raouf Yousfi" /></figure>
+              <figure class="if-person if-michael"><img src="assets/michael-cut.png" alt="Michael Buggy" /></figure>
+            </div>
+            <div class="if-names">
+              <p><b>Raouf Yousfi</b><span>Co-founder</span></p>
+              <p><b>Michael Buggy</b><span>Co-founder</span></p>
+            </div>
+          </div>
+
+          <p class="info-kicker">Free live webinar · hosted by the founders</p>
+          <h2 class="info-title">First Step into short term Rentals</h2>
+          <ul class="if-creds">
+            <li>Built The Flex &amp; Base360</li><li>100+ units managed</li><li>4 cities</li>
+          </ul>
+
+          <div class="info-date">
+            <i class="info-ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8.5 3v4M15.5 3v4"/></svg></i>
+            <div><b data-webinar-date>Thursday</b><span><span data-webinar-time>7:00 PM</span> · 60 min · Live online</span></div>
+          </div>
+
+          <p class="info-label">What they’ll walk you through</p>
+          <ul class="info-list">
+            <li>How a short-term rental business works, end to end</li>
+            <li>Choosing a market and securing a first unit</li>
+            <li>Setting up guest-ready operations from day one</li>
+            <li>Live Q&amp;A, answered by Raouf &amp; Michael</li>
+          </ul>
+          <p class="info-note">Free to join. A replay goes to everyone who registers.</p>
+        </div>
+      </aside>
+
+      <div class="flow-main">
+        <section class="fstep is-active" data-step="form">
+          <p class="fstep-kicker">Save your seat</p>
+          <h3 class="fstep-title">Register for the webinar</h3>
+          <p class="fstep-sub">We’ll send the joining link and a reminder before it starts.</p>
+          <form class="fform" data-form="webinar" novalidate>
+            <label class="field"><span>Full name</span><input name="name" autocomplete="name" required placeholder="Your name" /><em>Please add your name</em></label>
+            <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required placeholder="you@example.com" /><em>Please add a valid email</em></label>
+            <label class="field"><span>Country</span>
+              <select name="country" required>
+                <option value="" selected disabled>Select your country</option>
+                <option>United Kingdom</option><option>United States</option><option>Canada</option>
+                <option>Australia</option><option>Ireland</option><option>New Zealand</option>
+                <option>South Africa</option><option>Other</option>
+              </select><em>Please choose a country</em></label>
+            <button class="btn btn-lg btn-free fsubmit" type="submit" aria-label="Register for the free webinar"><span>Register for webinar</span><i class="arrow"></i><b class="spin"></b><em class="free-tag" aria-hidden="true">Free</em></button>
+            <p class="fform-legal">By registering you agree to receive emails about this webinar. Unsubscribe any time.</p>
+          </form>
+        </section>
+
+        <section class="fstep" data-step="done">
+          <div class="done-tick"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7.5 7.5L37 19"/></svg></div>
+          <p class="fstep-kicker">You’re registered</p>
+          <h3 class="fstep-title">See you on <span data-webinar-date>Thursday</span>, <span data-first-name></span></h3>
+          <p class="fstep-sub">The joining link is on its way to <b data-email></b>.</p>
+          <div class="done-card">
+            <div><b data-webinar-date>Thursday</b><span><span data-webinar-time>7:00 PM</span> · 60 min · Live online</span></div>
+            <div class="cal-btns">
+              <a class="cal-btn" data-cal="google" target="_blank" rel="noopener">Google Calendar</a>
+              <button class="cal-btn" data-cal="ics">Apple / Outlook (.ics)</button>
+            </div>
+          </div>
+          <div class="done-next">
+            <p>Already running a few units?</p>
+            <button class="link-btn" data-switch="call">Book a free strategy call instead <i class="arrow"></i></button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- ---------- STRATEGY CALL ---------- -->
+    <div class="flow-view" data-flow="call">
+      <aside class="flow-info info-call">
+        <div class="info-body">
+          <div class="info-founders">
+            <div class="if-stage">
+              <figure class="if-person if-raouf"><img src="assets/raouf-cut.png" alt="Raouf Yousfi" /></figure>
+              <figure class="if-person if-michael"><img src="assets/michael-cut.png" alt="Michael Buggy" /></figure>
+            </div>
+            <div class="if-names">
+              <p><b>Raouf Yousfi</b><span>Co-founder</span></p>
+              <p><b>Michael Buggy</b><span>Co-founder</span></p>
+            </div>
+          </div>
+
+          <p class="info-kicker">Free strategy call · 20–30 min with the team</p>
+          <h2 class="info-title">Talk through your portfolio with the team</h2>
+          <ul class="if-creds">
+            <li>Built The Flex &amp; Base360</li><li>100+ units managed</li><li>4 cities</li>
+          </ul>
+
+          <p class="info-label">On the call</p>
+          <ol class="info-steps">
+            <li><b>Where things stand</b><span>Your units today, and where most of the week goes</span></li>
+            <li><b>What tends to hold operators here</b><span>Patterns we saw growing The Flex across cities</span></li>
+            <li><b>Whether Scale fits</b><span>And what the next 12 weeks could look like if it does</span></li>
+          </ol>
+          <p class="info-note">Best suited to operators already running units. No obligation, and if it isn’t a fit, we’ll say so.</p>
+        </div>
+      </aside>
+
+      <div class="flow-main">
+        <div class="fprogress" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+
+        <!-- 1 · qualify -->
+        <section class="fstep is-active" data-step="qualify">
+          <p class="fstep-kicker">Step 1 of 3 · About your business</p>
+          <h3 class="fstep-title">A 20–30 minute call with the team</h3>
+          <p class="fstep-sub">Four quick details first, so the call is about your numbers, not ours.</p>
+          <form class="fform" data-form="call" novalidate>
+            <fieldset class="chips" data-name="units"><legend>Units you run today</legend>
+              <label><input type="radio" name="units" value="1–2" />1–2</label><label><input type="radio" name="units" value="3–5" />3–5</label><label><input type="radio" name="units" value="6–15" />6–15</label><label><input type="radio" name="units" value="16–30" />16–30</label><label><input type="radio" name="units" value="30+" />30+</label>
+            </fieldset>
+            <fieldset class="chips" data-name="target"><legend>Where you’d like to be in 12 months</legend>
+              <label><input type="radio" name="target" value="Up to 10 units" />Up to 10</label><label><input type="radio" name="target" value="10–30 units" />10–30</label><label><input type="radio" name="target" value="30–100 units" />30–100</label><label><input type="radio" name="target" value="100+ units" />100+</label>
+            </fieldset>
+            <label class="field"><span>City you operate in</span><input name="city" required placeholder="e.g. Manchester" autocomplete="address-level2" /><em>Please add a city</em></label>
+            <fieldset class="chips" data-name="budget"><legend>Budget for growing the business</legend>
+              <label><input type="radio" name="budget" value="Under $5k" />Under $5k</label><label><input type="radio" name="budget" value="$5k–$15k" />$5k–$15k</label><label><input type="radio" name="budget" value="$15k–$50k" />$15k–$50k</label><label><input type="radio" name="budget" value="$50k+" />$50k+</label>
+            </fieldset>
+            <button class="btn btn-lg btn-scale btn-free fsubmit" type="submit"><span>Choose a time</span><i class="arrow"></i><b class="spin"></b><em class="free-tag" aria-hidden="true">Free</em></button>
+          </form>
+          <button class="link-btn soft" data-goto="checklist">Not ready to talk? Get the free STR scaling checklist <i class="arrow"></i></button>
+        </section>
+
+        <!-- 2 · pick a slot -->
+        <section class="fstep" data-step="slot">
+          <button class="back-btn" data-goto="qualify">← Back</button>
+          <p class="fstep-kicker">Step 2 of 3 · Pick a time</p>
+          <h3 class="fstep-title">When suits you for 20–30 minutes?</h3>
+          <p class="fstep-sub">Times shown in <b data-tz></b>.</p>
+          <div class="slot-grid">
+            <div class="days" id="days"></div>
+            <div class="times" id="times"><p class="times-empty">Choose a day to see times</p></div>
+          </div>
+          <form class="fform slot-contact" data-form="contact" novalidate>
+            <button class="btn btn-lg btn-scale btn-free fsubmit" type="submit" disabled aria-label="Confirm your free call"><span>Confirm call</span><i class="arrow"></i><b class="spin"></b><em class="free-tag" aria-hidden="true">Free</em></button>
+          </form>
+        </section>
+
+        <!-- 3 · booked -->
+        <section class="fstep" data-step="done">
+          <div class="done-tick brown"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7.5 7.5L37 19"/></svg></div>
+          <p class="fstep-kicker">Step 3 of 3 · You’re booked</p>
+          <h3 class="fstep-title">You’re booked in</h3>
+          <p class="fstep-sub">A 20–30 minute video call with the team behind The Flex and Base360.</p>
+          <div class="done-card">
+            <div><b data-slot-date></b><span><span data-slot-time></span> · 20–30 min · Video call</span></div>
+            <div class="cal-btns">
+              <a class="cal-btn" data-cal="google" target="_blank" rel="noopener">Google Calendar</a>
+              <button class="cal-btn" data-cal="ics">Apple / Outlook (.ics)</button>
+            </div>
+          </div>
+          <div class="done-summary">
+            <p class="info-label">What you shared</p>
+            <dl><dt>Units today</dt><dd data-sum="units"></dd><dt>12-month aim</dt><dd data-sum="target"></dd><dt>City</dt><dd data-sum="city"></dd><dt>Budget</dt><dd data-sum="budget"></dd></dl>
+          </div>
+          <p class="fstep-sub small">Before the call, it helps to have rough figures for occupancy and monthly costs to hand.</p>
+        </section>
+
+        <!-- secondary · checklist -->
+        <section class="fstep" data-step="checklist">
+          <button class="back-btn" data-goto="qualify">← Back</button>
+          <p class="fstep-kicker">Free download</p>
+          <h3 class="fstep-title">The STR scaling checklist</h3>
+          <p class="fstep-sub">The list we run through when a portfolio grows past a handful of units: pricing, cleaning, guest messages, team and cash.</p>
+          <form class="fform" data-form="checklist" novalidate>
+            <label class="field"><span>Email</span><input name="email" type="email" required autocomplete="email" placeholder="you@example.com" /><em>Please add a valid email</em></label>
+            <button class="btn btn-lg btn-scale btn-free fsubmit" type="submit" aria-label="Send me the free checklist"><span>Send me the checklist</span><i class="arrow"></i><b class="spin"></b><em class="free-tag" aria-hidden="true">Free</em></button>
+          </form>
+        </section>
+
+        <section class="fstep" data-step="checklist-done">
+          <div class="done-tick brown"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7.5 7.5L37 19"/></svg></div>
+          <p class="fstep-kicker">On its way</p>
+          <h3 class="fstep-title">Check your inbox</h3>
+          <p class="fstep-sub">The checklist is heading to <b data-email></b>. When you’re ready to talk, the call is one click away.</p>
+          <button class="link-btn" data-goto="qualify">Book the strategy call <i class="arrow"></i></button>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Prototype controls -->
+<aside class="lab closed" id="lab">
+  <button class="lab-toggle" id="labToggle">Interactions</button>
+  <div class="lab-body">
+    <label><input type="checkbox" data-opt="lens" checked /> Colour lens (cursor)</label>
+    <label><input type="checkbox" data-opt="parallax" checked /> Depth parallax</label>
+    <label><input type="checkbox" data-opt="pins" checked /> Home pins</label>
+    <label><input type="checkbox" data-opt="magnetic" checked /> Magnetic CTA</label>
+    <label><input type="checkbox" data-opt="learnB" checked /> Learn layout B</label>
+    <button id="replay">Replay intro</button>
+  </div>
+</aside>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="hero.js?v=37"></script>
+<script src="camera.js?v=96"></script>
+<script src="learn.js?v=41"></script>
+<script src="ops.js?v=49"></script>
+<script src="price.js?v=31"></script>
+<script src="founders.js?v=43"></script>
+<script src="flows.js?v=41"></script>
+<script src="cases.js?v=2"></script>
+<script src="faq.js?v=1"></script>
+<script src="footer.js?v=33"></script>
+</body>
+</html>
